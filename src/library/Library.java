@@ -53,19 +53,15 @@ import java.util.List;
             }
         }
 
-        public void findBookByTitle(String searchTitle) {
-            boolean found = false;
+        public Book findBookByTitle(String searchTitle) {
             for (Book book : books) {
                 if (book.getTitle().equalsIgnoreCase(searchTitle)) {
-                    System.out.println("Найдена книга: " + book);
-                    found = true;
+                    return book;
                 }
             }
-
-            if (!found) {
-                System.out.println("Книга с названием \"" + searchTitle + "\" не найдена.");
-            }
+            return null;
         }
+
 
         public void showBookStats() {
             int avauilableCount = 0;
